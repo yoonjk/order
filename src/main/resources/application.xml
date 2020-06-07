@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: passw0rd
+    driver-class-name: org.postgresql.Driver
+    
+# username : labNN
+academy:
+  username: lab01
+  
+mybatis:
+  config-location: classpath:mybatis-config.xml
+
+product:
+  url: http://localhost:8081/products
+      
+stock:
+  url: http://localhost:8081/stocks
+  
+payment:
+  url: http://localhost:8082/payments  

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+       Copyright 2015-2019 the original author or authors.
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+-->
+<!DOCTYPE mapper
+       PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="order">
+
+    <insert id="saveOrder" parameterType="com.ibm.lab.order.model.OrderItem">
+        insert into order_item (order_id, username, status, product_code, amt, qty) 
+        values ( #{orderId}, #{username}, #{status}, #{productCode}, #{amt}, #{qty})
+        ON CONFLICT (order_id) DO
+        update set 	username = #{username},
+        			status = #{status},
+        			product_code = #{productCode},
+                   	amt = #{amt},
+                   	qty = #{qty}
+    </insert>
+
+    <update id="updateOrderStatus" parameterType="com.ibm.lab.order.model.OrderItem">
+        update order_item 
+                 set status = #{status}
+        where  order_id = #{orderId}
+        and    username = #{username}
+    </update> 
+    
+    <select id="findByUsername" parameterType="String" resultType="com.ibm.lab.order.model.OrderItem">
+        select id, order_id as orderId, username, status, product_code as productCode, amt, qty from order_item
+        where username = #{username}
+    </select>
+    
+     <select id="findByProductCode" parameterType="String" resultType="com.ibm.lab.order.model.OrderItem">
+        select id, order_id as orderId, username, status, product_code as productCode, amt, qty from order_item
+        where product_code = #{productCode}
+    </select> 
+    
+     <select id="findAll" parameterType="String" resultType="com.ibm.lab.order.model.OrderItem">
+        select id, order_id as orderId, username, status, product_code as productCode, amt, qty from order_item
+        where username = #{username}
+    </select>
+    
+    <delete id="deleteOrder" parameterType="com.ibm.lab.order.model.OrderItem">
+        delete from order_item
+        where username = #{username}
+        and   order_id = #{orderId}
+    </delete>
+    
+   <delete id="deleteAll" parameterType="String">
+        delete from order_item
+        where username = #{username}
+    </delete>
+</mapper>  
