@@ -24,6 +24,7 @@ academy:
 ```
    2.1. namespace 작성 규칙 : 
       user + NN( 일련번호 2자리)
+
       ex)
       - user01
       - user02
@@ -38,7 +39,20 @@ academy:
       - user01-stock
       - user01-payment 
 
-   2.3. YAML 파일 규칙 : 
+   2.3. service name 작성 규칙
+      app name과 동일하게 작성
+      
+      ex)
+      - user01-order
+
+   2.4. configmap 작성 규칙
+      app name + "-" + "config"
+      app name 에 postfix("config" 명 추가)
+
+      ex)
+      - user01-order-config
+
+   2.5. YAML 파일 규칙 : 
       userNN + appname(order|stock|payment 하나 선택) + ".yaml
       userNN + appname-service + ".yaml"
       userNN + appname-config + ".yaml"
