@@ -22,26 +22,31 @@ academy:
  2. App 관련 작성 규칙 
    username을 기준으로 namespace로 만들고 자신의 앱을 배포하십시요
 ```
-   namespace 작성 규칙 : user + NN( 일련번호 2자리)
-   ex)
-    - user01
-    - user02
-        :
-    - user40
+   2.1. namespace 작성 규칙 : 
+      user + NN( 일련번호 2자리)
+      ex)
+      - user01
+      - user02
+          :
+      - user40
 
-   app name 작성 규칙 : user + NN + "-" + post-fix (order|stock|payment  하나 선택)
-   ex)
-    - user01-order
-    - user01-stock
-    - user01-payment 
+   2.2. app name 작성 규칙 : 
+      user + NN + "-" + post-fix (order|stock|payment  하나 선택)
 
-   YAML 파일 규칙 : userNN + appname(order|stock|payment 하나 선택) + ".yaml
-                    userNN + appname-service + ".yaml"
-                    userNN + appname-config + ".yaml"
-   ex)
-    - user01-order.yaml
-    - user01-order-service.yaml
-    - user01-order-config.yaml
+      ex)
+      - user01-order
+      - user01-stock
+      - user01-payment 
+
+   2.3. YAML 파일 규칙 : 
+      userNN + appname(order|stock|payment 하나 선택) + ".yaml
+      userNN + appname-service + ".yaml"
+      userNN + appname-config + ".yaml"
+
+      ex)
+      - user01-order.yaml
+      - user01-order-service.yaml
+      - user01-order-config.yaml
 ```
 
  3. iks 배포후 상품정보를 먼저 등록하고 주문수행
