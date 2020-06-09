@@ -11,6 +11,13 @@ Order Microservice for Cloud Native Post Academy Deep Dive
 ![alt text](img/rest_tcc.png)
 
 ## 필수작업
+### 사전 설치 Solution
+ * postgres : orderdb, stockdb, paymentdb
+ * kafka
+ * redis
+ 
+![alt text](img/backing_service.png)
+
  1. application.xml
     사용자별로 할당받은 ID를 appliation.xml 설정
 ```
