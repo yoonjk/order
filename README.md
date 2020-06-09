@@ -12,7 +12,9 @@ Order Microservice for Cloud Native Post Academy Deep Dive
 
 ## 필수작업
 ### 사전 설치 Solution
- * postgres : orderdb, stockdb, paymentdb
+ default namespace에 backing service solution이 설치되어 있습니다.
+
+ * postgresSQL : orderdb, stockdb, paymentdb
  * kafka
  * redis
  
