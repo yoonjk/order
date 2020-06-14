@@ -35,41 +35,41 @@ academy:
       user + NN( 일련번호 2자리)
 
       ex)
-      - user01
-      - user02
+      - lab01
+      - lab02
           :
-      - user40
+      - lab40
 
    2.2. app name 작성 규칙 : 
-      user + NN + "-" + post-fix (order|stock|payment  하나 선택)
+      lab + NN + "-" + post-fix (order|stock|payment  하나 선택)
 
       ex)
-      - user01-order
-      - user01-stock
-      - user01-payment 
+      - lab01-order
+      - lab01-stock
+      - lab01-payment 
 
    2.3. service name 작성 규칙
       app name과 동일하게 작성
       
       ex)
-      - user01-order
+      - lab01-order
 
    2.4. configmap 작성 규칙
       app name + "-" + "config"
       app name 에 postfix("config" 명 추가)
 
       ex)
-      - user01-order-config
+      - lab01-order-config
 
    2.5. YAML 파일 규칙 : 
-      userNN + appname(order|stock|payment 하나 선택) + ".yaml
-      userNN + appname-service + ".yaml"
-      userNN + appname-config + ".yaml"
+      labNN + appname(order|stock|payment 하나 선택) + ".yaml
+      labNN + appname-service + ".yaml"
+      labNN + appname-config + ".yaml"
 
       ex)
-      - user01-order.yaml
-      - user01-order-service.yaml
-      - user01-order-config.yaml
+      - lab01-order.yaml
+      - lab01-order-service.yaml
+      - lab01-order-config.yaml
 ```
 
  3. iks 배포후 상품정보를 먼저 등록하고 주문수행
