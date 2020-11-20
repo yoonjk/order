@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order
+  namespace: lab40
+  labels:
+    app: order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      labels:
+        app: order
+    spec:
+      containers:
+      - name: order
+        image: nexweb1/order:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: order-config
+              key: POSTGRES_DB
+        - name: POSTGRES_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: order-config
+              key: POSTGRES_USERNAME
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: order-config
+              key: POSTGRES_PASSWORD
+        - name: ACADEMY_USER
+          value: lab40
+        - name: PRODUCT
+          value: stock
+        - name: STOCK
+          value: stock
+        - name: PAYMENT
+          value: payment

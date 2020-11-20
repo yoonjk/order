@@ -3,23 +3,23 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: passw0rd
+    url: jdbc:postgresql://${POSTGRES_DB}:5432/postgres
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
     driver-class-name: org.postgresql.Driver
     
 # username : labNN
 academy:
-  username: lab01
+  username: ${ACADEMY_USER}
   
 mybatis:
   config-location: classpath:mybatis-config.xml
 
 product:
-  url: http://localhost:8081/products
+  url: http://${PRODUCT}:8081/products
       
 stock:
-  url: http://localhost:8081/stocks
+  url: http://${STOCK}:8081/stocks
   
 payment:
-  url: http://localhost:8082/payments  
+  url: http://${PAYMENT}:8082/payments  
