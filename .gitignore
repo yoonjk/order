@@ -6,8 +6,17 @@
 .mvn/*
 .settings/*
 
+
+
 # Compiled class file
 *.class
+target/classes*
+target/generated*
+target/maven*
+target/test*
+target/surefire*
+target/order-0.1.0/*
+target/*.original
 
 # Log file
 *.log
@@ -20,7 +29,7 @@
 
 # Package Files #
 *.jar
-*.war
+#*.war
 *.nar
 *.ear
 *.zip
