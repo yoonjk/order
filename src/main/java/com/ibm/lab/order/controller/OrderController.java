@@ -111,7 +111,7 @@ public class OrderController {
     } 
 
     @GetMapping("/ready")
-    public Response ready() throws Exception {
-        return Response.ok("OK\n").build();
+    public ResponseEntity<String> ready() throws Exception {
+        return new ResponseEntity<>("OK", HttpStatus.OK);
     }
 }
