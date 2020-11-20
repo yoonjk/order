@@ -2,9 +2,12 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: order-config
-  namespace: lab40
 data:
 # POSTGRES DB
   POSTGRES_DB: orderdb.default
   POSTGRES_USERNAME: postgres
   POSTGRES_PASSWORD: passw0rd
+  ACADEMY_USER: lab40
+  PRODUCT: stock
+  STOCK: stock
+  PAYMENT: payment

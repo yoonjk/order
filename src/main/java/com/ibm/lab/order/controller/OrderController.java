@@ -109,4 +109,9 @@ public class OrderController {
     	
     	return new ResponseEntity<>("정상 처리되었습니다.", HttpStatus.OK);
     } 
+
+    @GetMapping("/ready")
+    public Response ready() throws Exception {
+        return Response.ok("OK\n").build();
+    }
 }
