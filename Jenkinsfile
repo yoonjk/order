@@ -11,5 +11,13 @@ pipeline {
         sh '   echo "test Success"'
       }
     }
+    stage('build image') {
+      steps {
+        script {
+          echo "build image Success"
+        }
+
+      }
+    }
   }
 }
