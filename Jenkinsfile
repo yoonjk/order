@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+  agnet {
+    node {
+      label "maven"
+    }
+  }
   stages {
     stage('build') {
       steps {
