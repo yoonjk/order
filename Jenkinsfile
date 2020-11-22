@@ -19,5 +19,15 @@ pipeline {
 
       }
     }
+    stage('deploy') {
+      steps {
+        sh 'echo "Deploy Success"'
+      }
+    }
+    stage('System test') {
+      steps {
+        sh 'echo "System test Success"'
+      }
+    }
   }
 }
