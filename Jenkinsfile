@@ -8,12 +8,8 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh '''    stage(\'Build\') {
-      steps {
-        tool \'maven\'
-      }
-    }'''
-        }
+        sh '    test'
       }
     }
   }
+}
